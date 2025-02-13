@@ -30,6 +30,20 @@ var template;
     }
     function myFunction() {
         var mamba = document.getElementsByClassName("cm-activeLine cm-line");
+        const styleSheet = document.createElement('style');
+        document.head.appendChild(styleSheet);
+        styleSheet.sheet.insertRule('.ͼ5 { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+        styleSheet.sheet.insertRule('.ͼb { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+        styleSheet.sheet.insertRule('.ͼd { color: #F76D47; }', 0); // 数字
+        styleSheet.sheet.insertRule('.ͼe { color: #91B878; }', 0); // 字符串
+        styleSheet.sheet.insertRule('.ͼm { color: #CCD7DA; }', 0); // 注释
+        styleSheet.sheet.insertRule('.ͼg { color: #80CBC4; }', 0); // 函数名
+        styleSheet.sheet.insertRule('.ͼi { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+        styleSheet.sheet.insertRule('.ͼf { color: #91B859; }', 0); // 头文件
+        styleSheet.sheet.insertRule('.cm-editor { color: #6182B8; }', 0); // 普通字符
+        styleSheet.sheet.insertRule('.ͼq .cm-content { font-family: Fira Code !important; font-size: 15px;}');
+        var fnfnfn = document.getElementsByClassName("ͼ1");
+        fnfnfn[0].style['font-family'] = "Fira Code !important";
         if (mamba[0].innerHTML != '<br>') {
             return ;
         }
