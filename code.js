@@ -10,6 +10,7 @@
 // ==/UserScript==
 
 var template;
+var darkmode = 0;
 
 (function() {
     var removeLine = function() {
@@ -29,21 +30,37 @@ var template;
         return it;
     }
     function myFunction() {
+        //DarkMode();
         var mamba = document.getElementsByClassName("cm-activeLine cm-line");
         const styleSheet = document.createElement('style');
         document.head.appendChild(styleSheet);
-        styleSheet.sheet.insertRule('.ͼ5 { color: #7C4EFF; font-style: italic; }', 0); // 关键字
-        styleSheet.sheet.insertRule('.ͼb { color: #7C4EFF; font-style: italic; }', 0); // 关键字
-        styleSheet.sheet.insertRule('.ͼd { color: #F76D47; }', 0); // 数字
-        styleSheet.sheet.insertRule('.ͼe { color: #91B878; }', 0); // 字符串
-        styleSheet.sheet.insertRule('.ͼm { color: #CCD7DA; }', 0); // 注释
-        styleSheet.sheet.insertRule('.ͼg { color: #80CBC4; }', 0); // 函数名
-        styleSheet.sheet.insertRule('.ͼi { color: #7C4EFF; font-style: italic; }', 0); // 关键字
-        styleSheet.sheet.insertRule('.ͼf { color: #91B859; }', 0); // 头文件
-        styleSheet.sheet.insertRule('.cm-editor { color: #6182B8; }', 0); // 普通字符
-        styleSheet.sheet.insertRule('.ͼq .cm-content { font-family: Fira Code !important; font-size: 15px;}');
-        var fnfnfn = document.getElementsByClassName("ͼ1");
-        fnfnfn[0].style['font-family'] = "Fira Code !important";
+        // 添加新的样式规则
+        if (darkmode == 0) {
+            styleSheet.sheet.insertRule('.ͼ5 { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼb { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼd { color: #F76D47; }', 0); // 数字
+            styleSheet.sheet.insertRule('.ͼe { color: #91B878; }', 0); // 字符串
+            styleSheet.sheet.insertRule('.ͼm { color: #CCD7DA; }', 0); // 注释
+            styleSheet.sheet.insertRule('.ͼg { color: #80CBC4; }', 0); // 函数名
+            styleSheet.sheet.insertRule('.ͼi { color: #7C4EFF; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼf { color: #91B859; }', 0); // 头文件
+            styleSheet.sheet.insertRule('.cm-editor { color: #6182B8; }', 0); // 普通字符
+        } else {
+            styleSheet.sheet.insertRule('.ͼ5 { color: #C792EA; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼb { color: #C792EA; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼd { color: #F78A68; }', 0); // 数字
+            styleSheet.sheet.insertRule('.ͼe { color: #C3E88D; }', 0); // 字符串
+            styleSheet.sheet.insertRule('.ͼm { color: #4A4A4A; }', 0); // 注释
+            styleSheet.sheet.insertRule('.ͼg { color: #7BAAFF; }', 0); // 函数名
+            styleSheet.sheet.insertRule('.ͼi { color: #C792EA; font-style: italic; }', 0); // 关键字
+            styleSheet.sheet.insertRule('.ͼf { color: #C3D365; }', 0); // 头文件
+            styleSheet.sheet.insertRule('.cm-editor { color: #EEFFFF; }', 0); // 普通字符
+            styleSheet.sheet.insertRule('.ͼ4 .cm-line { caret-color: yellow !important; }', 0); // 光标
+        }
+        //styleSheet.sheet.insertRule('.ͼq .cm-content { font-family: Fira Code !important; font-size: 15px;}');
+        styleSheet.sheet.insertRule('.ide-container[data-v-6198bd39] { height: calc(100vh - 3.5rem) }');
+        //var fnfnfn = document.getElementsByClassName("ͼ1");
+        //fnfnfn[0].style['font-family'] = "Fira Code !important";
         if (mamba[0].innerHTML != '<br>') {
             return ;
         }
@@ -70,6 +87,48 @@ var template;
             }
         }
         return t;
+    }
+    function DarkMode() {
+        darkmode = 1;
+        const styleSheet = document.createElement('style');
+        document.head.appendChild(styleSheet);
+        styleSheet.sheet.insertRule('.top-bar { background: black !important;}', 0);
+        styleSheet.sheet.insertRule('.svg-inline--fa { color: white !important;} ', 0);
+        styleSheet.sheet.insertRule('.top-bar .breadcrumb[data-v-4430a926]>* { color: white !important;}', 0);
+        styleSheet.sheet.insertRule('.lside.bar[data-v-4430a926] { background: #22272E !important;}', 0);
+        styleSheet.sheet.insertRule('nav.sidebar[data-v-06583f34]:not(:hover) li .title { color: white !important;}', 0);
+        styleSheet.sheet.insertRule('.ide-container .problem[data-v-6198bd39] { background: #2D333B !important;}', 0);
+        styleSheet.sheet.insertRule('.lfe-h1, .lfe-h2, .lfe-h3, .lfe-h4, .lfe-h5, .lfe-h6 { color: white !important;} ', 0);
+        styleSheet.sheet.insertRule('.lfe-marked-wrap { color: white; } ', 0);
+        styleSheet.sheet.insertRule('.lfe-marked pre, .lfe-marked pre>code { background: #22272E; color: white; } ', 0);
+        styleSheet.sheet.insertRule('.ide-toolbar { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.ide-toolbar .title>.text { color: white; } ', 0);
+        styleSheet.sheet.insertRule('label[data-v-25b6974c] { color: white; } ', 0);
+        styleSheet.sheet.insertRule('.ͼ1 .cm-gutter { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.ͼ1 .cm-content[contenteditable=true] { background: #212121; }', 0);
+        styleSheet.sheet.insertRule('::-webkit-scrollbar-track { background: #282828; }', 0);
+        styleSheet.sheet.insertRule('::-webkit-scrollbar-thumb { background: #555; }', 0);
+        styleSheet.sheet.insertRule('::-webkit-scrollbar-thumb:hover { background: #777; }', 0);
+        styleSheet.sheet.insertRule('html { scrollbar-color: #555 #282828; }', 0);
+        styleSheet.sheet.insertRule('.panel-layout>.panel-divider[data-v-30296b4c] { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.ide-container .ide-textarea[data-v-6198bd39] { background: #2D333B; color: white; }', 0);
+        styleSheet.sheet.insertRule('.ͼ2 .cm-activeLineGutter { background: #171717; }', 0);
+        styleSheet.sheet.insertRule('.ͼ2 .cm-activeLine { background: #171717; }', 0);
+        styleSheet.sheet.insertRule('.ide-toolbar { border: 1px solid #22272E }', 0);
+        styleSheet.sheet.insertRule('.ͼ2 .cm-gutters { border: 1px solid #22272E }', 0);
+        styleSheet.sheet.insertRule('input[data-v-6d12c5db], textarea[data-v-6d12c5db], .refined-input[data-v-6d12c5db] { border: 1px solid #22272E }', 0);
+        styleSheet.sheet.insertRule('.lfe-marked pre, .lfe-marked pre > code { border: 1px solid #22272E }', 0);
+        styleSheet.sheet.insertRule('.lfe-code { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.lfe-code { color: white; }', 0);
+        styleSheet.sheet.insertRule('.lfe-code { border: 1px solid #22272E; }', 0);
+        styleSheet.sheet.insertRule('.lfe-marked p code, .lfe-marked li code { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.lfe-marked p code, .lfe-marked li code { border: 1px solid #22272E; }', 0);
+        styleSheet.sheet.insertRule('.l-card[data-v-b62e56e7] { background: #2D333B; }', 0);
+        styleSheet.sheet.insertRule('main[data-v-f265fec6] { background: #22272E; }', 0);
+        styleSheet.sheet.insertRule('.l-flex-info-row>*:last-child { color: white; }', 0);
+        styleSheet.sheet.insertRule('.l-flex-info-row>*:first-child { color: white; }', 0);
+        styleSheet.sheet.insertRule('.theme-bg[data-v-f265fec6], .theme-fg[data-v-f265fec6] { background: #2D333B; }', 0);
+        console.log("DarkMode is opened");
     }
     template = localStorage.getItem("DE_aemmprty_template");
     console.log(template);
