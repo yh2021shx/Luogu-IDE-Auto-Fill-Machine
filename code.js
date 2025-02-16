@@ -131,7 +131,9 @@ var darkmode = 0;
         styleSheet.sheet.insertRule('.ͼi { color: #C792EA; font-style: italic; }', 0); // 关键字
         styleSheet.sheet.insertRule('.ͼf { color: #C3D365; }', 0); // 头文件
         styleSheet.sheet.insertRule('.cm-editor { color: #EEFFFF; }', 0); // 普通字符
+        styleSheet.sheet.insertRule('body { caret-color: yellow !important; }', 0); // 光标
         styleSheet.sheet.insertRule('.ͼ4 .cm-line { caret-color: yellow !important; }', 0); // 光标
+        styleSheet.sheet.insertRule('.ͼ4 .cm-line ::selection, .ͼ4 .cm-line::selection { background-color: #353535 !important; }', 0); // 选择颜色
         console.log("DarkMode is opened");
     }
     function Public() {
