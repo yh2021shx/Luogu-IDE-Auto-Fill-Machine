@@ -174,8 +174,8 @@ var darkmode = 0;
         overlay.classList.add('overlay');
         body.appendChild(overlay);
         var modal = document.createElement('div');
-        modal.setAttribute('id', 'modal');
-        modal.classList.add('modal');
+        modal.setAttribute('id', 'SettingModal');
+        modal.classList.add('SettingModal');
         var close = document.createElement('span');
         close.classList.add('setting-close');
         close.innerHTML = '&times;';
@@ -190,7 +190,7 @@ var darkmode = 0;
         styleSheet.setAttribute('id', 'Setting-Style');
         document.head.appendChild(styleSheet);
         styleSheet.sheet.insertRule('.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; }', 0);
-        styleSheet.sheet.insertRule('.modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1001; }', 0);
+        styleSheet.sheet.insertRule('.SettingModal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1001; }', 0);
         styleSheet.sheet.insertRule('.setting-close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px; font-weight: bold; color: red; }', 0);
     }
     function switchThemeMode() {
@@ -210,7 +210,7 @@ var darkmode = 0;
     function closeModal() {
         console.log('close Modal!');
         const overlay = document.getElementById('overlay');
-        const modal = document.getElementById('modal');
+        const modal = document.getElementById('SettingModal');
         overlay.style.display = 'none';
         modal.style.display = 'none';
         //location.reload(true);
@@ -218,7 +218,7 @@ var darkmode = 0;
     function OpenTheWindow() {
         console.log('open the window');
         const overlay = document.getElementById('overlay');
-        const modal = document.getElementById('modal');
+        const modal = document.getElementById('SettingModal');
         const closeButton = document.getElementsByClassName('setting-close')[0];
         const theme = document.getElementsByClassName('setting-button')[0];
         overlay.style.display = 'block';
