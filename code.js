@@ -31,8 +31,6 @@ var darkmode = 0;
     }
     function myFunction() {
         var mamba = document.getElementsByClassName("cm-activeLine cm-line");
-        styleSheet.sheet.insertRule('.ͼq .cm-content { font-family: Fira Code !important; font-size: 15px;}');
-        styleSheet.sheet.insertRule('.ide-container { height: calc(100vh - 3.5rem) }');
         var fnfnfn = document.getElementsByClassName("ͼ1");
         fnfnfn[0].style['font-family'] = "Fira Code !important";
         if (mamba[0].innerHTML != '<br>') {
@@ -141,6 +139,8 @@ var darkmode = 0;
         styleSheet.setAttribute('id', 'Public-Style');
         document.head.appendChild(styleSheet);
         styleSheet.sheet.insertRule('#IDE-Setting:hover { box-shadow: 0 0 7px 1px cornflowerblue }', 0);
+        styleSheet.sheet.insertRule('.ͼq .cm-content { font-family: Fira Code !important; font-size: 15px;}');
+        styleSheet.sheet.insertRule('.ide-container { height: calc(100vh - 3.5rem) }');
     }
     function Open() {
         var it = document.getElementsByClassName('user-nav');
